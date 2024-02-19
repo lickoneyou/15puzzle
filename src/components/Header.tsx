@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <header className="font-bold text-center text-[30px] text-white py-10">
+    <header className="font-bold text-center text-[30px] text-white py-10 uppercase">
       15 puzzle
     </header>
   )
