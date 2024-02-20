@@ -1,6 +1,6 @@
 import React from 'react'
 import { handleClick } from '../handlers/handleClick'
-import { Props } from '../interfaces/PuzzleProps'
+import { Props } from '../interfaces/puzzleProps'
 
 const Puzzle = ({ puzzle, setPuzzle }: Props) => {
   const puzzleStyles =
