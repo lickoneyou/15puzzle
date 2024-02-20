@@ -11,7 +11,7 @@ export const startGame = (
     createPuzzle(puzzle, setPuzzle)
     setTimeout(() => {
       mixing()
-    }, 1)
+    }, 0.1)
   }
   mixing()
 }
