@@ -12,7 +12,7 @@ export const startGame = (
   dispatch({ type: Actions.RESTART })
   let counter = 0
   function mixing() {
-    if (counter >= 200) return
+    if (counter >= 5) return
     counter++
     createPuzzle(puzzle, setPuzzle)
     setTimeout(() => {

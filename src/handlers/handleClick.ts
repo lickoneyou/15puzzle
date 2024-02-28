@@ -1,5 +1,6 @@
 import { Dispatch, UnknownAction } from '@reduxjs/toolkit'
 import { Actions } from '../actions/actions'
+import winnerNotificationt from './winnerNotification'
 
 type numPos = number | null
 
@@ -48,6 +49,7 @@ export const handleClick = (
     setPuzzle((state: number[][]) => {
       state[nullPosition[0]][nullPosition[1]] = Number(element)
       state[elementPosition[0]][elementPosition[1]] = 16
+      winnerNotificationt(state)
       return [...state]
     })
   }
