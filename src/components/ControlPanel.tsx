@@ -6,7 +6,7 @@ import { IRootState } from '../store/store'
 import { useDispatch } from 'react-redux'
 
 const ControlPanel = ({ puzzle, setPuzzle }: Props) => {
-  const clicks = useSelector((state: IRootState) => state)
+  const clicks = useSelector((state: IRootState) => state.clicks)
   const [btnText, setBtnText] = useState('Start')
   const [scoreHref, setScoreHref] = useState(window.location.hash)
   const dispatch = useDispatch()

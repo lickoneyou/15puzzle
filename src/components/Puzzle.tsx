@@ -9,7 +9,7 @@ const Puzzle = ({ puzzle, setPuzzle }: Props) => {
     'border-2 text-white w-100 h-100 flex items-center justify-center box-border m-1 text-[20px] cursor-pointer select-none'
   const dispatch = useDispatch()
   
-  const clicks = useSelector((state: IRootState) => state)
+  const clicks = useSelector((state: IRootState) => state.clicks)
 
   return (
     <div className="border-4 w-[40%] min-h-96 mx-auto p-1 grid grid-cols-4">
