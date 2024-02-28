@@ -14,25 +14,27 @@ const ControlPanel = ({ puzzle, setPuzzle }: Props) => {
     'text-white text-[25px] border-2 py-2 px-4 hover:bg-white hover:text-black transition ease-in-out duration-150 select-none'
 
   return (
-    <div>
+    <div className="flex justify-around mb-10 items-center">
       <p className="text-white uppercase text-[25px] select-none">
         clicks: {clicks}
       </p>
-      <button
-        onClick={() => startGame(puzzle, setPuzzle, setBtnText, dispatch)}
-        className={btnStyles}
-      >
-        {btnText}
-      </button>
-      <a
-        href={scoreHref}
-        onClick={() => {
-          setScoreHref((state) => (state.includes('score') ? '#' : '#score'))
-        }}
-        className={[btnStyles, 'inline-block'].join(' ')}
-      >
-        Records
-      </a>
+      <div>
+        <button
+          onClick={() => startGame(puzzle, setPuzzle, setBtnText, dispatch)}
+          className={[btnStyles, 'mr-3'].join(' ')}
+        >
+          {btnText}
+        </button>
+        <a
+          href={scoreHref}
+          onClick={() => {
+            setScoreHref((state) => (state.includes('score') ? '#' : '#score'))
+          }}
+          className={[btnStyles, 'inline-block'].join(' ')}
+        >
+          Records
+        </a>
+      </div>
     </div>
   )
 }
