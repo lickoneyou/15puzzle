@@ -6,9 +6,9 @@ import { IRootState } from '../store/store'
 
 const Puzzle = ({ puzzle, setPuzzle }: Props) => {
   const puzzleStyles =
-    'border-2 text-white w-100 h-100 flex items-center justify-center box-border m-1 text-[20px] cursor-pointer select-none'
+    'border-2 text-white w-100 h-100 flex items-center justify-center box-border m-1 text-[20px] cursor-pointer select-none hover:bg-white hover:text-black transition ease-in-out duration-150'
   const dispatch = useDispatch()
-  
+
   const clicks = useSelector((state: IRootState) => state.clicks)
 
   return (
