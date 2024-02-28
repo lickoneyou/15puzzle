@@ -8,7 +8,8 @@ export const handleClick = (
   e: React.MouseEvent<HTMLDivElement, MouseEvent>,
   puzzle: number[][],
   setPuzzle: (value: React.SetStateAction<number[][]>) => void,
-  dispatch: Dispatch<UnknownAction>
+  dispatch: Dispatch<UnknownAction>,
+  clicks: number
 ) => {
   let elementPosition: number[] = [0, 0]
   let nullPosition: number[] = [0, 0]
@@ -49,8 +50,8 @@ export const handleClick = (
     setPuzzle((state: number[][]) => {
       state[nullPosition[0]][nullPosition[1]] = Number(element)
       state[elementPosition[0]][elementPosition[1]] = 16
-      winnerNotificationt(state)
       return [...state]
     })
+    setTimeout(() => winnerNotificationt(puzzle, clicks), 1)
   }
 }

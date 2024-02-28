@@ -1,12 +1,15 @@
 import React from 'react'
 import { handleClick } from '../handlers/handleClick'
 import { Props } from '../interfaces/puzzleProps'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { IRootState } from '../store/store'
 
 const Puzzle = ({ puzzle, setPuzzle }: Props) => {
   const puzzleStyles =
     'border-2 text-white w-100 h-100 flex items-center justify-center box-border m-1 text-[20px] cursor-pointer select-none'
   const dispatch = useDispatch()
+  
+  const clicks = useSelector((state: IRootState) => state)
 
   return (
     <div className="border-4 w-[40%] min-h-96 mx-auto p-1 grid grid-cols-4">
@@ -24,7 +27,7 @@ const Puzzle = ({ puzzle, setPuzzle }: Props) => {
               key={index}
               className={puzzleStyles}
               onClick={(e) => {
-                handleClick(e, puzzle, setPuzzle, dispatch)
+                handleClick(e, puzzle, setPuzzle, dispatch, clicks)
               }}
             >
               {elem}
