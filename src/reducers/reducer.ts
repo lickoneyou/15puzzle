@@ -6,6 +6,10 @@ export const reducer = (state = 0, action: Iaction) => {
       state += 1
       return state
 
+    case 'RESTART':
+      state = 0
+      return state
+
     default:
       return state
   }
