@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { startGame } from '../handlers/startGame'
 import { Props } from '../interfaces/puzzleProps'
 import { useSelector } from 'react-redux'
-import { IRootState } from '../store/store'
+import IRootState from '../interfaces/IRootState'
 import { useDispatch } from 'react-redux'
 
 const ControlPanel = ({ puzzle, setPuzzle }: Props) => {

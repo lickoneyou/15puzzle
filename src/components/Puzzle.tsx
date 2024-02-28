@@ -2,7 +2,7 @@ import React from 'react'
 import { handleClick } from '../handlers/handleClick'
 import { Props } from '../interfaces/puzzleProps'
 import { useDispatch, useSelector } from 'react-redux'
-import { IRootState } from '../store/store'
+import IRootState from '../interfaces/IRootState'
 
 const Puzzle = ({ puzzle, setPuzzle }: Props) => {
   const puzzleStyles =

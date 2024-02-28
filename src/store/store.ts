@@ -10,5 +10,3 @@ const reducers = combineReducers({
 export const store = configureStore({
   reducer: reducers,
 })
-
-export type IRootState = ReturnType<typeof store.getState>
