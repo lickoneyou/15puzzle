@@ -1,4 +1,4 @@
 export interface Iwinners {
-  name: string
+  name: string | null
   clicks: number
 }

@@ -1,4 +1,4 @@
-import { Iwinners } from '../interfaces/Iwinners'
+import addWinner from './addWinner'
 import checkWinners from './checkWinners'
 
 const winnerNotification = (arr: number[][], clicks: number) => {
@@ -6,22 +6,12 @@ const winnerNotification = (arr: number[][], clicks: number) => {
   if (arr.flat().join() === winPosition) {
     const winners = checkWinners()
     if (winners.length === 3 && winners[2].clicks > clicks) {
-      const winnerName = prompt('You Win! Enter your name:')
-      winners.push({ name: winnerName, clicks: clicks + 1 })
-      const sortWinners = winners.sort(
-        (a: Iwinners, b: Iwinners) => a.clicks - b.clicks,
-      )
-      sortWinners.pop()
-      localStorage.setItem('winners', JSON.stringify(sortWinners))
+      addWinner(winners, clicks, 'pop')
       return
     }
     if (winners.length < 3) {
-      const winnerName = prompt('You Win! Enter your name:')
-      winners.push({ name: winnerName, clicks: clicks + 1 })
-      const sortWinners = winners.sort(
-        (a: Iwinners, b: Iwinners) => a.clicks - b.clicks,
-      )
-      localStorage.setItem('winners', JSON.stringify(sortWinners))
+      addWinner(winners, clicks, '')
+      return
     } else {
       alert('You Win!')
     }
