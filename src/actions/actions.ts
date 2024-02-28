@@ -1,4 +1,6 @@
 export enum Actions {
   ADD = 'ADD',
-  RESTART = 'RESTART'
+  RESTART = 'RESTART',
+  DISABLED = 'DISABLED',
+  ENABLED = 'ENABLED'
 }

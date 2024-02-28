@@ -10,6 +10,7 @@ const Puzzle = ({ puzzle, setPuzzle }: Props) => {
   const dispatch = useDispatch()
 
   const clicks = useSelector((state: IRootState) => state.clicks)
+  const status = useSelector((state: IRootState) => state.disabled )
 
   return (
     <div className="border-4 w-[40%] min-h-96 mx-auto p-1 grid grid-cols-4">
@@ -27,6 +28,7 @@ const Puzzle = ({ puzzle, setPuzzle }: Props) => {
               key={index}
               className={puzzleStyles}
               onClick={(e) => {
+                if(!status) return
                 handleClick(e, puzzle, setPuzzle, dispatch, clicks)
               }}
             >

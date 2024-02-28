@@ -1,11 +1,13 @@
 import { Iaction } from '../interfaces/Iaction'
 
-const disabled = (state: string = 'disabled', action: Iaction) => {
+const disabled = (state: boolean = false, action: Iaction) => {
   switch (action.type) {
     case 'DISABLED':
-      state = 'disabled'
+      state = false
       return state
-
+    case 'ENABLED':
+      state = true
+      return state
     default:
       return state
   }

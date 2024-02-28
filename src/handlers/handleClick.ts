@@ -52,6 +52,6 @@ export const handleClick = (
       state[elementPosition[0]][elementPosition[1]] = 16
       return [...state]
     })
-    setTimeout(() => winnerNotificationt(puzzle, clicks), 1)
+    setTimeout(() => winnerNotificationt(puzzle, clicks, dispatch), 1)
   }
 }

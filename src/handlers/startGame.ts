@@ -10,6 +10,7 @@ export const startGame = (
 ) => {
   setBtnText((state) => (state = 'Restart'))
   dispatch({ type: Actions.RESTART })
+  dispatch({ type: Actions.ENABLED })
   let counter = 0
   function mixing() {
     if (counter >= 5) return
