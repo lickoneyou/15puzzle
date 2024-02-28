@@ -1,9 +1,13 @@
+import { Dispatch, UnknownAction } from '@reduxjs/toolkit'
+import { Actions } from '../actions/actions'
+
 type numPos = number | null
 
 export const handleClick = (
   e: React.MouseEvent<HTMLDivElement, MouseEvent>,
   puzzle: number[][],
   setPuzzle: (value: React.SetStateAction<number[][]>) => void,
+  dispatch: Dispatch<UnknownAction>
 ) => {
   let elementPosition: number[] = [0, 0]
   let nullPosition: number[] = [0, 0]
@@ -40,6 +44,7 @@ export const handleClick = (
     }
   })
   if (collision.includes(16)) {
+    dispatch({ type: Actions.ADD })
     setPuzzle((state: number[][]) => {
       state[nullPosition[0]][nullPosition[1]] = Number(element)
       state[elementPosition[0]][elementPosition[1]] = 16

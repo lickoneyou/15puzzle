@@ -2,7 +2,6 @@ import React from 'react'
 import { handleClick } from '../handlers/handleClick'
 import { Props } from '../interfaces/puzzleProps'
 import { useDispatch } from 'react-redux'
-import { Actions } from '../actions/actions'
 
 const Puzzle = ({ puzzle, setPuzzle }: Props) => {
   const puzzleStyles =
@@ -25,8 +24,7 @@ const Puzzle = ({ puzzle, setPuzzle }: Props) => {
               key={index}
               className={puzzleStyles}
               onClick={(e) => {
-                handleClick(e, puzzle, setPuzzle)
-                dispatch({ type: Actions.ADD })
+                handleClick(e, puzzle, setPuzzle, dispatch)
               }}
             >
               {elem}
