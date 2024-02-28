@@ -30,7 +30,7 @@ const ControlPanel = ({ puzzle, setPuzzle }: Props) => {
         onClick={() =>
           setScoreHref((state) => (state === '#' ? '#score' : '#'))
         }
-        className={btnStyles}
+        className={[btnStyles, 'inline-block'].join(' ')}
       >
         Records
       </a>
