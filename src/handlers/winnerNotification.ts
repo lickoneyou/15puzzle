@@ -20,7 +20,9 @@ const winnerNotification = (
       addWinner(winners, clicks, '')
       return
     } else {
-      alert('You Win!')
+      setTimeout(() => {
+        alert('You Win!')
+      }, 160)
     }
   }
 }
