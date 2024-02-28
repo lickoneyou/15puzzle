@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { startGame } from '../handlers/startGame'
 import { Props } from '../interfaces/puzzleProps'
 import { useSelector } from 'react-redux'
@@ -8,8 +9,10 @@ import { useDispatch } from 'react-redux'
 const ControlPanel = ({ puzzle, setPuzzle }: Props) => {
   const clicks = useSelector((state: IRootState) => state)
   const [btnText, setBtnText] = useState('Start')
+  const [scoreHref, setScoreHref] = useState('#score')
   const dispatch = useDispatch()
-  const btnStyles = "text-white text-[25px] border-2 py-2 px-4 hover:bg-white hover:text-black transition ease-in-out duration-150 select-none"
+  const btnStyles =
+    'text-white text-[25px] border-2 py-2 px-4 hover:bg-white hover:text-black transition ease-in-out duration-150 select-none'
 
   return (
     <div>
@@ -18,11 +21,19 @@ const ControlPanel = ({ puzzle, setPuzzle }: Props) => {
       </p>
       <button
         onClick={() => startGame(puzzle, setPuzzle, setBtnText, dispatch)}
-        className= {btnStyles}
+        className={btnStyles}
       >
         {btnText}
       </button>
-      <button className= {btnStyles}>Records</button>
+      <a
+        href={scoreHref}
+        onClick={() =>
+          setScoreHref((state) => (state === '#' ? '#score' : '#'))
+        }
+        className={btnStyles}
+      >
+        Records
+      </a>
     </div>
   )
 }

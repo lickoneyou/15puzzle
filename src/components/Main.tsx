@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import ControlPanel from './ControlPanel'
 import Puzzle from './Puzzle'
+import Score from './Score'
 
 const Main = () => {
   const [puzzle, setPuzzle] = useState([
@@ -12,8 +14,16 @@ const Main = () => {
 
   return (
     <main className="min-h-full">
-      <ControlPanel puzzle={puzzle} setPuzzle={setPuzzle}/>
-      <Puzzle puzzle={puzzle} setPuzzle={setPuzzle}/>
+      <ControlPanel puzzle={puzzle} setPuzzle={setPuzzle} />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<Puzzle puzzle={puzzle} setPuzzle={setPuzzle} />}
+          />
+          <Route path="/score" element={<Score />} />
+        </Routes>
+      </Router>
     </main>
   )
 }
