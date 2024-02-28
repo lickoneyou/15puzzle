@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { startGame } from '../handlers/startGame'
 import { Props } from '../interfaces/puzzleProps'
 import { useSelector } from 'react-redux'
