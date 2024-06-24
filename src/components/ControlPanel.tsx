@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { startGame } from '../handlers/startGame'
-import { Props } from '../interfaces/puzzleProps'
 import { useSelector } from 'react-redux'
 import IRootState from '../interfaces/IRootState'
 import { useDispatch } from 'react-redux'
+import { IProps } from '../interfaces/PuzzleProps'
 
-const ControlPanel = ({ puzzle, setPuzzle }: Props) => {
+const ControlPanel = ({ puzzle, setPuzzle }: IProps) => {
   const clicks = useSelector((state: IRootState) => state.clicks)
   const [btnText, setBtnText] = useState('Start')
   const [scoreHref, setScoreHref] = useState(window.location.hash)

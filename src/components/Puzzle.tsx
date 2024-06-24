@@ -1,10 +1,10 @@
 import React from 'react'
 import { handleClick } from '../handlers/handleClick'
-import { Props } from '../interfaces/puzzleProps'
+import { IProps } from '../interfaces/PuzzleProps'
 import { useDispatch, useSelector } from 'react-redux'
 import IRootState from '../interfaces/IRootState'
 
-const Puzzle = ({ puzzle, setPuzzle }: Props) => {
+const Puzzle = ({ puzzle, setPuzzle }: IProps) => {
   const puzzleStyles =
     'border-2 text-white w-100 h-100 flex items-center justify-center box-border m-1 text-[20px] cursor-pointer select-none hover:bg-white hover:text-black transition ease-in-out duration-150'
   const dispatch = useDispatch()
